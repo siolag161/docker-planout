@@ -4,12 +4,9 @@ MAINTAINER pdt <pdthanh06@gmail.com>
 # make sure the package repository is up to date
 RUN apt-get update
 
-RUN apt-get install -y software-properties-common
-
-RUN apt-get install -y build-essential
-
 # core dev stuff
-
+RUN apt-get install -y software-properties-common
+RUN apt-get install -y build-essential
 RUN apt-get install -y  tar git curl nano wget dialog net-tools
 RUN apt-get install -y libpq-dev libjpeg-dev
 
@@ -21,7 +18,7 @@ RUN pip install virtualenv
 
 ####### WEB STUFF ##########
 # supervisor & nginx
-run apt-get install -y nginx supervisor
+RUN apt-get install -y nginx supervisor
 
 # gunicorn
 RUN pip install gunicorn
@@ -36,4 +33,4 @@ RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update
 RUN apt-get install -y nginx
 
-####### END EB STUFF ##########
+####### END WEB STUFF ##########
